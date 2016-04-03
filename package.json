@@ -1,0 +1,40 @@
+{
+  "name": "micro-app-remote-control",
+  "version": "0.9.0",
+  "description": "Remote control in node",
+  "main": "lib/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node lib/server.js"
+  },
+  "dependencies": {
+    "micro-app-framework": "^0.1.1",
+    "socket.io": "~1.3.7",
+    "mqtt": "~1.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhdawson/micro-app-remote-control.git"
+  },
+  "keywords": [
+    "iot",
+    "mqtt",
+    "dashboard",
+    "micro-app",
+    "sensor",
+    "remote",
+    "remote control"
+  ],
+  "author": "Michael Dawson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhdawson/micro-app-remote-control/issues"
+  },
+  "homepage": "https://github.com/mhdawson/micro-app-remote-control#readme",
+  "contributors": [
+    {
+      "name": "Michael Dawson",
+      "email": "mdawson@devrus.com"
+    }
+  ]
+}

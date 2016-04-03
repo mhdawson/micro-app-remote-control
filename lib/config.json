@@ -1,0 +1,18 @@
+{
+  "title": "Remote Control",
+  "size": {"x": 252, "y": 264},
+  "serverPort": 3000,
+  "mqttServerUrl": "tcp://10.1.1.186:1883",
+  "buttons": [ { "label": "LR ON", "size": {"x": 60, "y": 60}, "position": {"x":  126, "y": 2}, "color": "green", "commands": [ {"topic": "house/x10" , "message": "A,1,1" }] },
+               { "label": "LR OFF", "size": {"x": 60, "y": 60}, "position": {"x":  188, "y": 2}, "color": "green", "commands": [ {"topic": "house/x10" , "message": "A,1,0" }] },
+               { "label": "LL ON", "size": {"x": 60, "y": 60}, "position": {"x":  2, "y": 2}, "color": "green", "commands": [ {"topic": "house/x10" , "message": "A,2,1" }] },
+               { "label": "LL OFF", "size": {"x": 60, "y": 60}, "position": {"x":  64, "y": 2}, "color": "green", "commands": [ {"topic": "house/x10" , "message": "A,2,0" }] },
+               { "label": "D ON", "size": {"x": 60, "y": 60}, "position": {"x": 2, "y": 64}, "color": "green", "commands": [ {"topic": "house/x10" , "message": "A,5,1" }] },
+               { "label": "D OFF", "size": {"x": 60, "y": 60}, "position": {"x": 64, "y": 64}, "color": "green", "commands": [ {"topic": "house/x10" , "message": "A,5,0" }] },
+               { "label": "ALL OFF", "size": {"x": 246, "y": 60}, "position": {"x": 2, "y": 126}, "color": "red",  "commands": [ { "delay": 0, "topic": "house/x10" , "message": "A,5,0" },
+                                                                                                                                 { "delay": 1000, "topic": "house/x10" , "message": "A,1,0" },
+                                                                                                                                 { "delay": 2000, "topic": "house/x10" , "message": "A,2,0" }] },
+               { "label": "AC ON", "size": {"x": 122, "y": 60}, "position": {"x": 2, "y": 202}, "color": "green", "commands": [ {"topic": "home/2272" , "message": "0F0FFFFF0110" }] },
+               { "label": "AC OFF", "size": {"x": 122, "y": 60}, "position": {"x": 126, "y": 202}, "color": "green", "commands": [ {"topic": "home/2272" , "message": "0F0FFFFF0101" }] }
+             ]
+}
