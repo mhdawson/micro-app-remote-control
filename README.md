@@ -10,14 +10,16 @@ the [micro-app-mqtt-x10-bridge]
 (https://github.com/mhdawson/arduino-sensors/tree/master/ACRemote),
 and [PI433WirelessTXManager]
 (https://github.com/mhdawson/PI433WirelessTXManager)
-projects as well as any other device which an be controlled
-through mqtt.
+projects. It can also be used with any other device
+which an be controlled through mqtt.
 
 The buttons on the remote control are fully customizable
 in terms of location, size, color and what mqtt topic/message
 is invoked when the button is pressed.
 
-The remote can be realized as a browser window, native
+The remote can be realized as a browser window by simply
+pointing a browser at the appropriate server/port or as
+a native
 desktop application or native mobile app using the
 [micro-app-electron-launcher]
 (https://github.com/mhdawson/micro-app-electron-launcher), or
@@ -25,7 +27,7 @@ desktop application or native mobile app using the
 (https://github.com/mhdawson/micro-app-cordova-launcher) 
 projects.
 
-These are examples of my initial remote setup as a browser
+These are examples of my initial remote as a browser
 window and native android application:
 
 ![remote control browser]
@@ -36,11 +38,11 @@ window and native android application:
 
 Right now I've configured it to allow me to turn on/off lights
 in our living room and dining room, turn off all lights at once
-and to turn one/off the split air conditioner in our bedroom.
+and to turn on/off the split air conditioner in our bedroom.
 
 # Usage
 
-After installation modify ../lib/config.json to match your configuration
+After installation modify ../lib/config.json to match your configuration.
 
 The configuration entries that must be updated include:
 
@@ -52,7 +54,7 @@ The configuration entries that must be updated include:
   which is authorized to connect to the mqtt server.
 * serverPort - port on which the dashboard listens for connections
 * size - object with x and y fields that define the size used for the remote window
-* buttons - array in which each entry defines a button on the remote.  Each entryh
+* buttons - array in which each entry defines a button on the remote.  Each entry
   is an object with the following values:
   * label - text to be shown on the button
   * size - object with x and y fields for the sizes of the button
@@ -62,14 +64,16 @@ The configuration entries that must be updated include:
   button is pressed.  Each object has the following values:
     * topic - topic on which message wil be sent when button is pressed
     * message -  message sent on topic when button is pressed
-    * delay - delay after the button is pressed when the message is sent 
-    often when a button invokes multiple actions you will need to have a delay
+    * delay - delay after the button is pressed when the message is sent.  
+    Often when a button invokes multiple actions you will need to have a delay
+    in order to avoid conflicts (for example sending X10 messages to close together
+    can mess things up).
 
 As a micro-app the dashboard also supports other options like authentication and
-tls for the dashboard connection.  See the documentation for the [micro-app-framework]
+tls for the connection to the GUI.  See the documentation for the [micro-app-framework]
 (https://github.com/mhdawson/micro-app-framework) for additional details.
 
-The following is an example of the configuration file:
+The following is an example configuration file:
 
 <PRE>
 {
@@ -100,7 +104,9 @@ Simply run:
 npm install micro-app-remote-control
 </PRE>
 
-and then configure as described in the section above.
+and then configure as described in the section above. Alternatively you
+can clone the github repo and then run "npm install" from the directory
+for the project.
 
 # Running
 
@@ -118,18 +124,10 @@ If you have configured your browser to allow javascript to close the current pag
 the original window will be closed and one with the correct size of the
 alert-dashboard app page will be created.
 
-
-# Example
-
-The following is the page shown for a sample configuration:
-
-![remote control browser]
-(https://raw.githubusercontent.com/mhdawson/micro-app-remote-control/master/pictures/browser-remote.jpg)
-
 # Key Depdencies
 
 ## micro-app-framework
-As a micro-app the onetime password app depends on the micro-app-framework:
+As a micro-app the micro-app-remote-control app depends on the micro-app-framework:
 
 * [micro-app-framework npm](https://www.npmjs.com/package/micro-app-framework)
 * [micro-app-framework github](https://github.com/mhdawson/micro-app-framework)
