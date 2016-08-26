@@ -1,6 +1,6 @@
 {
   "title": "Remote Control",
-  "size": {"x": 252, "y": 264},
+  "size": {"x": 270, "y": 290},
   "serverPort": 3000,
   "mqttServerUrl": "tcp://10.1.1.186:1883",
   "buttons": [ { "label": "LR ON", "size": {"x": 60, "y": 60}, "position": {"x":  126, "y": 2}, "color": "green", "commands": [ {"topic": "house/x10" , "message": "A,1,1" }] },
